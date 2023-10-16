@@ -8,6 +8,7 @@ declare(strict_types=1);
  * @contact  eric@zhu.email
  * @license  https://github.com/hyperf-ext/sms/blob/master/LICENSE
  */
+
 namespace HyperfExt\Sms\Contracts;
 
 interface SmsManagerInterface
@@ -35,4 +36,12 @@ interface SmsManagerInterface
      * Deliver the queued message after the given delay.
      */
     public function later(SmsableInterface $smsable, int $delay, ?string $queue = null): bool;
+
+    /**
+     * 更新短信配置
+     *
+     * @param array $smsConfig
+     * @return void
+     */
+    public function updateSmsConfig(array $smsConfig = []): void;
 }

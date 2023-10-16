@@ -8,6 +8,7 @@ declare(strict_types=1);
  * @contact  eric@zhu.email
  * @license  https://github.com/hyperf-ext/sms/blob/master/LICENSE
  */
+
 namespace HyperfExt\Sms;
 
 use Hyperf\Contract\ConfigInterface;
@@ -60,6 +61,11 @@ class SmsManager implements SmsManagerInterface
         }
 
         return $this->senders[$name];
+    }
+
+    public function updateSmsConfig(array $smsConfig = []): void
+    {
+        $smsConfig && $this->config = array_merge($this->config, $smsConfig);
     }
 
     public function sendNow(SmsableInterface $smsable): array
@@ -116,9 +122,9 @@ class SmsManager implements SmsManagerInterface
         $senders = (is_array($smsable->senders) && count($smsable->senders) > 0)
             ? $smsable->senders
             : (
-                is_array($this->config['default']['senders'])
-                    ? $this->config['default']['senders']
-                    : [$this->config['default']['senders']]
+            is_array($this->config['default']['senders'])
+                ? $this->config['default']['senders']
+                : [$this->config['default']['senders']]
             );
 
         if (empty($senders)) {
