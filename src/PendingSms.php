@@ -76,14 +76,15 @@ class PendingSms
     /**
      * 更新配置
      * @param array $config
-     * @return void
+     * @return $this
      */
-    public function updateSmsConfig(array $config = []): void
+    public function updateSmsConfig(array $config = []): PendingSms
     {
         try {
             $config && ApplicationContext::getContainer()->get(SmsManagerInterface::class)->updateSmsConfig($config);
         } catch (NotFoundExceptionInterface|ContainerExceptionInterface $e) {
         }
+        return $this;
     }
 
 
