@@ -8,12 +8,15 @@ declare(strict_types=1);
  * @contact  eric@zhu.email
  * @license  https://github.com/hyperf-ext/sms/blob/master/LICENSE
  */
+
 namespace HyperfExt\Sms;
 
 use Hyperf\Utils\ApplicationContext;
 use HyperfExt\Contract\HasMobileNumber;
 use HyperfExt\Sms\Contracts\SmsableInterface;
 use HyperfExt\Sms\Contracts\SmsManagerInterface;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class PendingSms
 {
@@ -45,8 +48,8 @@ class PendingSms
      * @param \HyperfExt\Contract\HasMobileNumber|string $number
      * @param null|int|string $defaultRegion
      *
-     * @throws \HyperfExt\Sms\Exceptions\InvalidMobileNumberException
      * @return $this
+     * @throws \HyperfExt\Sms\Exceptions\InvalidMobileNumberException
      */
     public function to($number, $defaultRegion = null)
     {
@@ -68,6 +71,21 @@ class PendingSms
 
         return $this;
     }
+
+
+    /**
+     * 更新配置
+     * @param array $config
+     * @return void
+     */
+    public function updateSmsConfig(array $config = []): void
+    {
+        try {
+            $config && ApplicationContext::getContainer()->get(SmsManagerInterface::class)->updateSmsConfig($config);
+        } catch (NotFoundExceptionInterface|ContainerExceptionInterface $e) {
+        }
+    }
+
 
     /**
      * Send a new SMS message instance immediately.
