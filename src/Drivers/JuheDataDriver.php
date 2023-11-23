@@ -27,12 +27,14 @@ class JuheDataDriver extends AbstractDriver
         $params = [
             'mobile' => $smsable->to->getNationalNumber(),
             'tpl_id' => $smsable->template,
-            'tpl_value' => $this->formatTemplateVars($smsable->data),
+            'vars' => json_encode($smsable->data),
+           // 'tpl_value' => $this->formatTemplateVars($smsable->data),
             'dtype' => self::ENDPOINT_FORMAT,
             'key' => $this->config->get('app_key'),
         ];
 
-        $response = $this->client->get(self::ENDPOINT_URL, $params);
+        //$response = $this->client->get(self::ENDPOINT_URL, $params);
+        $response = $this->client->post(self::ENDPOINT_URL, $params);
 
         $result = $response->toArray();
 
