@@ -16,6 +16,7 @@ use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberType;
 use libphonenumber\PhoneNumberUtil;
+use function Hyperf\Config\config;
 
 class MobileNumber implements MobileNumberInterface
 {

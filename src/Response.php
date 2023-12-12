@@ -10,7 +10,8 @@ declare(strict_types=1);
  */
 namespace HyperfExt\Sms;
 
-use Hyperf\Utils\Contracts\Arrayable;
+
+use Hyperf\Contract\Arrayable;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 use Psr\Http\Message\StreamInterface;

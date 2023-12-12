@@ -15,6 +15,7 @@ use Hyperf\Validation\Event\ValidatorFactoryResolved;
 use HyperfExt\Sms\MobileNumber;
 use LogicException;
 use Throwable;
+use function Hyperf\Config\config;
 
 class ValidatorFactoryResolvedListener implements ListenerInterface
 {

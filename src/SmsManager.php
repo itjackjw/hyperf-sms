@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace HyperfExt\Sms;
 
 use Hyperf\Contract\ConfigInterface;
+
 use HyperfExt\Contract\ShouldQueue;
 use HyperfExt\Sms\Contracts\SenderInterface;
 use HyperfExt\Sms\Contracts\SmsableInterface;

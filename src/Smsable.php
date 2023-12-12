@@ -11,9 +11,9 @@ declare(strict_types=1);
 namespace HyperfExt\Sms;
 
 use Hyperf\AsyncQueue\Driver\DriverFactory;
+use Hyperf\Context\ApplicationContext;
 use Hyperf\Contract\CompressInterface;
 use Hyperf\Contract\UnCompressInterface;
-use Hyperf\Utils\ApplicationContext;
 use HyperfExt\Sms\Contracts\MobileNumberInterface;
 use HyperfExt\Sms\Contracts\SenderInterface;
 use HyperfExt\Sms\Contracts\SmsableInterface;

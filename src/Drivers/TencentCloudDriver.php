@@ -10,7 +10,8 @@ declare(strict_types=1);
  */
 namespace HyperfExt\Sms\Drivers;
 
-use Hyperf\Utils\Arr;
+
+use Hyperf\Collection\Arr;
 use HyperfExt\Sms\Contracts\SmsableInterface;
 use HyperfExt\Sms\Exceptions\DriverErrorException;
 

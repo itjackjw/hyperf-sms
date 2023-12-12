@@ -11,8 +11,8 @@ declare(strict_types=1);
 namespace HyperfExt\Sms;
 
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+use Hyperf\Context\ApplicationContext;
 use Hyperf\Guzzle\ClientFactory;
-use Hyperf\Utils\ApplicationContext;
 use HyperfExt\Sms\Exceptions\RequestException;
 
 class Client

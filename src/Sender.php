@@ -17,6 +17,7 @@ use HyperfExt\Sms\Events\SmsMessageSending;
 use HyperfExt\Sms\Events\SmsMessageSent;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
+use function Hyperf\Support\make;
 
 class Sender implements SenderInterface
 {

@@ -11,7 +11,8 @@ declare(strict_types=1);
 
 namespace HyperfExt\Sms;
 
-use Hyperf\Utils\ApplicationContext;
+
+use Hyperf\Context\ApplicationContext;
 use HyperfExt\Contract\HasMobileNumber;
 use HyperfExt\Sms\Contracts\SmsableInterface;
 use HyperfExt\Sms\Contracts\SmsManagerInterface;

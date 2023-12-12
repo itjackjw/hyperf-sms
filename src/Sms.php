@@ -10,7 +10,7 @@ declare(strict_types=1);
  */
 namespace HyperfExt\Sms;
 
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;
 use HyperfExt\Contract\HasMailAddress;
 use HyperfExt\Sms\Contracts\SmsManagerInterface;
 
