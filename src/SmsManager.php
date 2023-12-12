@@ -22,6 +22,7 @@ use InvalidArgumentException;
 use LogicException;
 use Psr\Container\ContainerInterface;
 use Throwable;
+use function Hyperf\Support\make;
 
 class SmsManager implements SmsManagerInterface
 {
